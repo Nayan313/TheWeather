@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=   , initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+
+<body>
+    <img src="img/bg.jpg" alt="">
+    <section class="main">
+        <header>
+            <input type="search" name="search" id="search" placeholder="Search City">
+            <button><img src="svg/light.svg" alt="" title="Change Theme"></button>
+            <button><img src="svg/setting-day.svg" alt="" title="Setting"></button>
+        </header>
+
+        <div class="top-main">
+            <div class="part1" id="part-main">
+                <div class="icon-sec">
+                    <img src="svg/overcast-day-drizzle.svg" alt="">
+                </div>
+                <div class="temp">32<span>&deg;C</span></div>
+                <div class="condition">Sunny</div>
+                <div class="location">
+                    <img src="svg/location-day.svg" class="svgSecNight" id="svgDayNight" alt="">
+                    <img src="svg/location-night.svg" class="svgSecDay" id="svgDayNight" alt="">
+                    <div class="locationName">Ahmedabad , IN</div>
+                </div>
+                <div class="dateTime">
+                    <img src="svg/calendar-day.svg" class="svgSecNight" id="svgDayNight" alt="">
+                    <img src="svg/calendar-night.svg" class="svgSecDay" id="svgDayNight" alt="">
+                    <div class="DateAndTime">24 July 2024</div>
+                </div>
+            </div>
+            <div class="part2">
+                <div class="in-part-1">
+                    <div class="highlight">
+                        <div class="title">
+                            <img src="svg/smoke-particles.svg" alt="">
+                            <h3>Visibility</h3>
+                        </div>
+                        <div class="Contex">
+                            <h1>4.5 km</h1>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <div class="title">
+                            <img src="svg/barometer.svg" alt="">
+                            <h3>Pressure</h3>
+                        </div>
+                        <div class="Contex">
+                            <h1>29.84 mb</h1>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <div class="title">
+                            <img src="svg/thermometer.svg" alt="">
+                            <h3>Feels like</h3>
+                        </div>
+                        <div class="Contex">
+                            <h1>45&deg;C</h1>
+                        </div>
+                    </div>
+                    <div class="highlight" id="temp-box">
+                        <div class="title">
+                            <img src="svg/thermometer-celsius.svg" alt="">
+                            <h3>Temperature</h3>
+                        </div>
+                        <div class="highAndLow">
+                            <div>
+                                <img src="svg/pressure-high.svg" alt="">
+                                <p class="high">45</p>
+                            </div>
+                            <div>
+                                <img src="svg/pressure-low.svg" alt="">
+                                <p class="low">40</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="in-part-2">
+                    <div class="highlight">
+                        <div class="title">
+                            <img src="svg/uv-index.svg" alt="">
+                            <h3>UV Index</h3>
+                        </div>
+                        <div class="uvContex">
+                            <img src="svg/uv circle.svg" alt="">
+                            <div class="uv-condition-img">
+                                <img src="svg/uv-index-7.svg" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <div class="title">
+                            <img src="svg/windsock.svg" alt="">
+                            <h3>Wind</h3>
+                        </div>
+                        <div class="windContext">
+                            <img src="svg/lineWind.svg" alt="">
+                            <div class="wind-detail">
+                                <img src="svg/direction.svg" alt="">
+                                <h3>12 Km/h</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <div class="title">
+                            <img src="svg/raindrop-measure.svg" alt="">
+                            <h3>Humidity</h3>
+                        </div>
+                        <div class="humidityContex">
+                            <h3>43%</h3>
+                            <p>Humidity make feels hotter in weather</p>
+                        </div>
+                    </div>
+                    <div class="highlight" id="sunTime">
+                        <div class="title">
+                            <img src="svg/sun-hot.svg" alt="">
+                            <h3>Sun</h3>
+
+                        </div>
+                        <div class="sunLine">
+                            <img src="svg/progressCircle.svg" class="sun-img">
+                        </div>
+                        <div class="sun-detail">
+                            <div class="sunrise">
+                                <img src="svg/sunrise.svg" alt="">
+                                <p>3:45</p>
+                            </div>
+                            <div class="sunset">
+                                <img src="svg/sunset.svg" alt="">
+                                <p>7:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- <div class="part3" id="part-main">
+                <div class="temp-box">
+                    
+                </div>
+                <div class="sunTime">
+                    
+                </div>
+            </div> -->
+        </div>
+        </div>
+        <h1 class="day-title-on-top" id="head-title">day forecast</h1>
+        <div class="day-forecast">
+            <div class="main-container">
+                <p>Today Summary</p>
+                <div class="day-container">
+                    <div class="day-card">
+                        <div class="time">2:00</div>
+                        <div class="condition"><img src="svg/clear-day.svg" alt=""></div>
+                        <div class="huminity"><span>35%</span></div>
+                        <div class="temp">56</div>
+                        <div class="temp">34</div>
+                        <div class="temp">67</div>
+                    </div>
+                    <div class="day-card">
+                        <div class="time">2:00</div>
+                        <div class="condition"><img src="svg/clear-day.svg" alt=""></div>
+                        <div class="huminity"><span>35%</span></div>
+                        <div class="temp">56</div>
+                        <div class="temp">34</div>
+                        <div class="temp">67</div>
+                    </div>
+                    <div class="day-card">
+                        <div class="time">2:00</div>
+                        <div class="condition"><img src="svg/clear-day.svg" alt=""></div>
+                        <div class="huminity"><span>35%</span></div>
+                        <div class="temp">56</div>
+                        <div class="temp">34</div>
+                        <div class="temp">67</div>
+                    </div>
+                    <div class="day-card">
+                        <div class="time">2:00</div>
+                        <div class="condition"><img src="svg/clear-day.svg" alt=""></div>
+                        <div class="huminity"><span>35%</span></div>
+                        <div class="temp">56</div>
+                        <div class="temp">34</div>
+                        <div class="temp">67</div>
+                    </div>
+                    <div class="day-card">
+                        <div class="time">2:00</div>
+                        <div class="condition"><img src="svg/clear-day.svg" alt=""></div>
+                        <div class="huminity"><span>35%</span></div>
+                        <div class="temp">56</div>
+                        <div class="temp">34</div>
+                        <div class="temp">67</div>
+                    </div>
+                    <div class="day-card">
+                        <div class="time">2:00</div>
+                        <div class="condition"><img src="svg/clear-day.svg" alt=""></div>
+                        <div class="huminity"><span>35%</span></div>
+                        <div class="temp">56</div>
+                        <div class="temp">34</div>
+                        <div class="temp">67</div>
+                    </div>
+                    <div class="day-card">
+                        <div class="time">2:00</div>
+                        <div class="condition"><img src="svg/clear-day.svg" alt=""></div>
+                        <div class="huminity"><span>35%</span></div>
+                        <div class="temp">56</div>
+                        <div class="temp">34</div>
+                        <div class="temp">67</div>
+                    </div>
+                    <div class="day-card">
+                        <div class="time">2:00</div>
+                        <div class="condition"><img src="svg/clear-day.svg" alt=""></div>
+                        <div class="huminity"><span>35%</span></div>
+                        <div class="temp">56</div>
+                        <div class="temp">34</div>
+                        <div class="temp">67</div>
+                    </div>
+                    <div class="day-card">
+                        <div class="time">2:00</div>
+                        <div class="condition"><img src="svg/clear-day.svg" alt=""></div>
+                        <div class="huminity"><span>35%</span></div>
+                        <div class="temp">56</div>
+                        <div class="temp">34</div>
+                        <div class="temp">67</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="chart">
+                <canvas id="NewChart"></canvas>
+            </div>
+
+        </div>
+        <div class="week-forecast">
+            <h1 id="head-title">Weekly Forecast</h1>
+            <div class="week-container">
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/cloud-down.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/cloudy.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/extreme-day-sleet.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/dust-wind.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+                <div class="week-card">
+                    <div class="time">2:50</div>
+                    <img src="svg/clear-day.svg" alt="">
+                    <div class="condition">Clear</div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        <div class="airQuality">
+            <h1 id="head-title">Air Quality</h1>
+            <div class="air-expert">
+                <div class="partExpert">
+                    <p>Expert Suggestion</p>
+                    <h4 class="indexScale">High</h4>
+                </div>
+                <p class="indexScaleSummary">
+                    <span><i>" A UV Index reading of 6 to 7 means high risk of harm from unprotected sun exposure.
+                            Protection against skin and eye damage is needed."
+                        </i></span>
+                </p>
+            </div>
+            <div class="all-components">
+                <div class="component">
+                    <p>co</p>
+                    <h1>867.19</h1>
+                    <div class="AirChart">
+                        <canvas id="coChart"></canvas>
+                    </div>
+                </div>
+                <div class="component">
+                    <p>nh3</p>
+                    <h1>12.16</h1>
+                    <div class="AirChart">
+                        <canvas id="nh3Chart"></canvas>
+                    </div>
+                </div>
+                <div class="component">
+                    <p>no</p>
+                    <h1>1.48</h1>
+                    <div class="AirChart">
+                        <canvas id="noChart"></canvas>
+                    </div>
+                </div>
+                <div class="component">
+                    <p>no2</p>
+                    <h1>17.48</h1>
+                    <div class="AirChart">
+                        <canvas id="no2Chart"></canvas>
+                    </div>
+                </div>
+                <div class="component">
+                    <p>o3</p>
+                    <h1>191.69</h1>
+                    <div class="AirChart">
+                        <canvas id="o3Chart"></canvas>
+                    </div>
+                </div>
+                <div class="component">
+                    <p>pm2_5</p>
+                    <h1>126.4</h1>
+                    <div class="AirChart">
+                        <canvas id="pm2_5Chart"></canvas>
+                    </div>
+                </div>
+                <div class="component">
+                    <p>pm10</p>
+                    <h1>161.85</h1>
+                    <div class="AirChart">
+                        <canvas id="pm10Chart"></canvas>
+                    </div>
+                </div>
+                <div class="component">
+                    <p>so2</p>
+                    <h1>31.95</h1>
+                    <div class="AirChart">
+                        <canvas id="so2Chart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+<div class="nayan">Created by Nayan Sukhadiya 🤍</div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
