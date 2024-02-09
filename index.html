@@ -5,18 +5,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=   , initial-scale=1.0">
     <title>The Weather</title>
-    <link rel="stylesheet" href="style.css"> <link rel="icon" type="image/x-icon" href="img/pngtree-gradient-glassmorphism-element-of-sunny-weather-cloud-png-image_5686444.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon"
+        href="img/pngtree-gradient-glassmorphism-element-of-sunny-weather-cloud-png-image_5686444.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 </head>
 
-<body>
-    <img src="img/bg.jpg" alt="">
-    <section class="main">
+<body class="Dark-Theme">
+    <div class="load1" id="load2">
+        <div id="wifi-loader">
+            <svg class="circle-outer" viewBox="0 0 86 86">
+                <circle class="back" cx="43" cy="43" r="40"></circle>
+                <circle class="front" cx="43" cy="43" r="40"></circle>
+                <circle class="new" cx="43" cy="43" r="40"></circle>
+            </svg>
+            <svg class="circle-middle" viewBox="0 0 60 60">
+                <circle class="back" cx="30" cy="30" r="27"></circle>
+                <circle class="front" cx="30" cy="30" r="27"></circle>
+            </svg>
+            <svg class="circle-inner" viewBox="0 0 34 34">
+                <circle class="back" cx="17" cy="17" r="14"></circle>
+                <circle class="front" cx="17" cy="17" r="14"></circle>
+            </svg>
+            <div class="text" data-text="loading"></div>
+        </div>
+    </div>
+    <div class="setting-panel" id="SettingPanel">
+        <button onclick="closeSetting()"><span></span></button>
+        <div class="controlPanel">
+            <div class="navbar">
+                <div id="theme" name="nav" class="inline">
+                    <div class="navbar1" id="themeOpen">theme <span>></span></div>
+                    <div id="themeSection" class="inSection">
+                        <span id="closeCh"></span>
+                        <h1 id="title-inSection">Theme</h1>
+                        <div class="choice">
+                            <input type="radio" id="ThemeRadio1" name="ThemeRadios" value="Dark-Theme" checked>
+                            <label for="ThemeRadio1">dark Theme</label>
+
+                            <input type="radio" id="ThemeRadio2" name="ThemeRadios" value="Light-Theme">
+                            <label for="ThemeRadio2">light theme</label>
+
+                            <input type="radio" id="ThemeRadio3" name="ThemeRadios" value="Glassy-Theme">
+                            <label for="ThemeRadio3">glassy</label>
+                        </div>
+                        <button onclick="ChTheme()" id="changeSetting">change theme</button>
+                    </div>
+                </div>
+                <div id="font" name="nav" class="inline">
+                    <div class="navbar1" id="fontOpen"> font <span>></span></div>
+                    <div id="fontSection" class="inSection">
+                        <span id="closeCh"></span>
+                        <h1 id="title-inSection">Font</h1>
+                        <div class="choice">
+                            <input type="radio" id="radio1" name="radios" value="Montserrat" checked>
+
+                            <label for="radio1" id="font5" style="font-family:Montserrat">Montserrat</label>
+
+                            <input type="radio" id="radio2" name="radios" value="ProductSans">
+                            <label for="radio2" id="sans" style="font-family:ProductSans">ProductSans</label>
+
+                            <input type="radio" id="radio3" name="radios" value="Gilmer">
+                            <label for="radio3" style="font-family:Gilmer">Gilmer</label>
+
+                            <input type="radio" id="radio4" name="radios" value="TT-Runs">
+                            <label for="radio4" style="font-family:TT-Runs">TT Runs</label>
+
+                            <input type="radio" id="radio5" name="radios" value="ladyrose">
+                            <label for="radio5" style="font-family:ladyrose">ladyrose</label>
+
+                            <input type="radio" id="radio6" name="radios" value="pigarnos">
+                            <label for="radio6" style="font-family:pigarnos">pigarnos</label>
+
+                            <input type="radio" id="radio7" name="radios" value="Mortend">
+                            <label for="radio7" style="font-family:Mortend">Mortend</label>
+
+                        </div>
+                        <button onclick="chn()" id="changeSetting">change font style</button>
+                    </div>
+                </div>
+                <div id="color" name="nav" class="inline">
+                    <div class="navbar1" id="colorOpen">color <span>></span></div>
+                    <div id="colorSection" class="inSection">
+                        <span id="closeCh"></span>
+                        <h1 id="title-inSection">color</h1>
+                        <div class="choice">
+                            <input type="radio" id="colorRadio1" name="colorRadios" value="0" checked>
+                            <label for="colorRadio1"><img src="color/0.png" id="colorImg"
+                                    alt=""></label>
+                            <input type="radio" id="colorRadio2" name="colorRadios" value="1" checked>
+                            <label for="colorRadio2"><img src="color/1.png" id="colorImg"
+                                    alt=""></label>
+                            <input type="radio" id="colorRadio3" name="colorRadios" value="2" checked>
+                            <label for="colorRadio3"><img src="color/2.png" id="colorImg"
+                                    alt=""></label>
+                            <input type="radio" id="colorRadio4" name="colorRadios" value="3" checked>
+                            <label for="colorRadio4"><img src="color/3.png" id="colorImg"
+                                    alt=""></label>
+                        </div>
+                        <button onclick="ChThemeC()"  id="changeSetting">change color theme</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="img/bg.jpg" alt="" id="bgImg">
+    <section class="main" id="main">
         <header>
             <input type="search" name="search" id="search" placeholder="Search City">
             <button><img src="svg/light.svg" alt="" title="Change Theme"></button>
-            <button><img src="svg/setting-day.svg" alt="" title="Setting"></button>
+            <button onclick="openSetting()"><img src="svg/setting-day.svg" alt="" title="Setting"></button>
         </header>
 
         <div class="top-main">
@@ -110,7 +209,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="highlight">
+                    <div class="highlight" id="Humidity">
                         <div class="title">
                             <img src="svg/raindrop-measure.svg" alt="">
                             <h3>Humidity</h3>
@@ -418,9 +517,10 @@
             </div>
         </div>
 
-<div class="nayan">Created by Nayan Sukhadiya 🤍</div>
+        <div class="nayan">Created by Nayan Sukhadiya 🤍</div>
     </section>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/graph.js"></script>
 </body>
 
 </html>
