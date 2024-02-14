@@ -28,12 +28,12 @@
                 <circle class="back" cx="17" cy="17" r="14"></circle>
                 <circle class="front" cx="17" cy="17" r="14"></circle>
             </svg>
-            <div class="text" data-text="loading"></div>
+            <div class="text" data-text="loading..."></div>
         </div>
     </div>
     <div class="setting-panel" id="SettingPanel">
         <button onclick="closeSetting()"><span></span></button>
-        <div class="controlPanel">
+        <div class="controlPanel" id="controlPanel">
             <div class="navbar">
                 <div id="theme" name="nav" class="inline">
                     <div class="navbar1" id="themeOpen">theme <span>></span></div>
@@ -51,6 +51,9 @@
                             <label for="ThemeRadio3">glassy</label>
                         </div>
                         <button onclick="ChTheme()" id="changeSetting">change theme</button>
+                        <button class="button type1">
+                            <span class="btn-txt">Hello</span>
+                          </button>
                     </div>
                 </div>
                 <div id="font" name="nav" class="inline">
@@ -90,21 +93,11 @@
                     <div id="colorSection" class="inSection">
                         <span id="closeCh"></span>
                         <h1 id="title-inSection">color</h1>
-                        <div class="choice">
-                            <input type="radio" id="colorRadio1" name="colorRadios" value="0" checked>
-                            <label for="colorRadio1"><img src="color/0.png" id="colorImg"
-                                    alt=""></label>
-                            <input type="radio" id="colorRadio2" name="colorRadios" value="1" checked>
-                            <label for="colorRadio2"><img src="color/1.png" id="colorImg"
-                                    alt=""></label>
-                            <input type="radio" id="colorRadio3" name="colorRadios" value="2" checked>
-                            <label for="colorRadio3"><img src="color/2.png" id="colorImg"
-                                    alt=""></label>
-                            <input type="radio" id="colorRadio4" name="colorRadios" value="3" checked>
-                            <label for="colorRadio4"><img src="color/3.png" id="colorImg"
-                                    alt=""></label>
+                        <div class="choice" id="choice">
+                            
+
                         </div>
-                        <button onclick="ChThemeC()"  id="changeSetting">change color theme</button>
+                        <button onclick="ChThemeC()" id="changeSetting">change color theme</button>
                     </div>
                 </div>
             </div>
@@ -114,8 +107,7 @@
     <section class="main" id="main">
         <header>
             <input type="search" name="search" id="search" placeholder="Search City">
-            <button><img src="svg/light.svg" alt="" title="Change Theme"></button>
-            <button onclick="openSetting()"><img src="svg/setting-day.svg" alt="" title="Setting"></button>
+            <button onclick="openSetting()"><i class="fa-solid fa-gear"></i></button>
         </header>
 
         <div class="top-main">
@@ -126,13 +118,11 @@
                 <div class="temp">32<span>&deg;C</span></div>
                 <div class="condition">Sunny</div>
                 <div class="location">
-                    <img src="svg/location-day.svg" class="svgSecNight" id="svgDayNight" alt="">
-                    <img src="svg/location-night.svg" class="svgSecDay" id="svgDayNight" alt="">
+                    <i class="fa-solid fa-location-crosshairs"></i>
                     <div class="locationName">Ahmedabad , IN</div>
                 </div>
                 <div class="dateTime">
-                    <img src="svg/calendar-day.svg" class="svgSecNight" id="svgDayNight" alt="">
-                    <img src="svg/calendar-night.svg" class="svgSecDay" id="svgDayNight" alt="">
+                    <i class="fa-regular fa-calendar"></i>
                     <div class="DateAndTime">24 July 2024</div>
                 </div>
             </div>
@@ -202,9 +192,20 @@
                             <h3>Wind</h3>
                         </div>
                         <div class="windContext">
-                            <img src="svg/lineWind.svg" alt="">
+                            <div class="wind-bar">
+                                <div class="windBar1"></div>
+                                <div class="windBar2"></div>
+                                <div class="windBar3"></div>
+                                <div class="windBar4"></div>
+                                <div class="windBar5"></div>
+                                <div class="windBar6"></div>
+                                <div class="windBar7"></div>
+                                <div class="windBar8"></div>
+                                <div class="windBar9"></div>
+                                <div class="windBar10"></div>
+                            </div>
                             <div class="wind-detail">
-                                <img src="svg/direction.svg" alt="">
+                                <i class="fa-solid fa-location-arrow"></i>
                                 <h3>12 Km/h</h3>
                             </div>
                         </div>
@@ -519,6 +520,7 @@
 
         <div class="nayan">Created by Nayan Sukhadiya 🤍</div>
     </section>
+    <script src="https://kit.fontawesome.com/ccefff6d75.js" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <script src="js/graph.js"></script>
 </body>

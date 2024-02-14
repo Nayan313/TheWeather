@@ -1,11 +1,11 @@
 //forecast graph
-
+const getGraph = (stringValue) => {
 var chart = document.getElementById("NewChart").getContext("2d"),
   gradient = chart.createLinearGradient(0, 0, 0, 450);
 
-gradient.addColorStop(0, "rgba(72,72,72, 0.4)");
-gradient.addColorStop(0.5, "rgba(72,72,72, 0.2)");
-gradient.addColorStop(1, "rgba(72,72,72, 0.1)");
+gradient.addColorStop(0, colorData[stringValue].main+90);
+gradient.addColorStop(0.5, colorData[stringValue].main+40);
+gradient.addColorStop(1, colorData[stringValue].main+10);
 
 var data = {
   labels: [
@@ -23,11 +23,12 @@ var data = {
   ],
   datasets: [
     {
-      label: "Custom Label Name",
+      label: "Temperature",
       backgroundColor: gradient,
-      pointBackgroundColor: "white",
+      titleFontColor: colorData[stringValue].background,
+      pointBackgroundColor: colorData[stringValue].main,
       borderWidth: 1,
-      borderColor: "rgba(109,110,103)",
+      borderColor: colorData[stringValue].main,
       data: [3, 5, 6, 7, 8, 9, 1, 12, 12, 19, 21],
     },
   ],
@@ -44,7 +45,7 @@ var options = {
     xAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.05)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -52,7 +53,7 @@ var options = {
     yAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.08)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -67,14 +68,14 @@ var options = {
     display: false,
   },
   point: {
-    backgroundColor: "white",
+    backgroundColor: colorData[stringValue].main,
   },
   tooltips: {
     titleFontFamily: "Open Sans",
-    backgroundColor: "rgba(0,0,0,0.3)",
-    titleFontColor: "#424242",
+    backgroundColor: colorData[stringValue].main+50,
+    titleFontColor: colorData[stringValue].background,
     caretSize: 5,
-    cornerRadius: 2,
+    cornerRadius: 12,
     xPadding: 10,
     yPadding: 10,
   },
@@ -91,9 +92,9 @@ var chartInstance = new Chart(chart, {
 var coChart = document.getElementById("coChart").getContext("2d"),
   gradient = coChart.createLinearGradient(0, 0, 0, 450);
 
-gradient.addColorStop(0, "rgba(72,72,72, 0.4)");
-gradient.addColorStop(0.5, "rgba(72,72,72, 0.2)");
-gradient.addColorStop(1, "rgba(72,72,72, 0.1)");
+gradient.addColorStop(0, colorData[stringValue].main+90);
+gradient.addColorStop(0.5, colorData[stringValue].main+40);
+gradient.addColorStop(1, colorData[stringValue].main+10);
 
 var coData = {
   labels: ["9:00", "10:00", "11:00", "12:00", "1:00", "2:00", "3:00"],
@@ -101,9 +102,9 @@ var coData = {
     {
       label: "co",
       backgroundColor: gradient,
-      pointBackgroundColor: "white",
+      pointBackgroundColor: colorData[stringValue].main,
       borderWidth: 1,
-      borderColor: "rgba(109,110,103)",
+      borderColor: colorData[stringValue].main,
       data: [23, 15, 46, 87, 18, 19, 11],
     },
   ],
@@ -120,7 +121,7 @@ var options = {
     xAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.05)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -128,7 +129,7 @@ var options = {
     yAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.08)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -143,12 +144,12 @@ var options = {
     display: false,
   },
   point: {
-    backgroundColor: "white",
+    backgroundColor: colorData[stringValue].main,
   },
   tooltips: {
     titleFontFamily: "Open Sans",
-    backgroundColor: "rgba(0,0,0,0.3)",
-    titleFontColor: "#424242",
+    backgroundColor: colorData[stringValue].main+30,
+    titleFontColor: colorData[stringValue].main+90,
     caretSize: 5,
     cornerRadius: 2,
     xPadding: 10,
@@ -167,9 +168,9 @@ var chartInstance = new Chart(coChart, {
 var nh3 = document.getElementById("nh3Chart").getContext("2d"),
   gradient = nh3.createLinearGradient(0, 0, 0, 450);
 
-gradient.addColorStop(0, "rgba(72,72,72, 0.4)");
-gradient.addColorStop(0.5, "rgba(72,72,72, 0.2)");
-gradient.addColorStop(1, "rgba(72,72,72, 0.1)");
+gradient.addColorStop(0, colorData[stringValue].main+90);
+gradient.addColorStop(0.5, colorData[stringValue].main+40);
+gradient.addColorStop(1, colorData[stringValue].main+10);
 
 var nh3Data = {
   labels: ["9:00", "10:00", "11:00", "12:00", "1:00", "2:00", "3:00"],
@@ -177,9 +178,9 @@ var nh3Data = {
     {
       label: "nh3",
       backgroundColor: gradient,
-      pointBackgroundColor: "white",
+      pointBackgroundColor: colorData[stringValue].main,
       borderWidth: 1,
-      borderColor: "rgba(109,110,103)",
+      borderColor: colorData[stringValue].main,
       data: [43, 35, 96, 77, 48, 59, 71],
     },
   ],
@@ -196,7 +197,7 @@ var options = {
     xAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.05)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -204,7 +205,7 @@ var options = {
     yAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.08)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -219,12 +220,12 @@ var options = {
     display: false,
   },
   point: {
-    backgroundColor: "white",
+    backgroundColor: colorData[stringValue].main,
   },
   tooltips: {
     titleFontFamily: "Open Sans",
-    backgroundColor: "rgba(0,0,0,0.3)",
-    titleFontColor: "#424242",
+    backgroundColor: colorData[stringValue].main+30,
+    titleFontColor: colorData[stringValue].main+90,
     caretSize: 5,
     cornerRadius: 2,
     xPadding: 10,
@@ -243,9 +244,9 @@ var chartInstance = new Chart(nh3, {
 var noChart = document.getElementById("noChart").getContext("2d"),
   gradient = noChart.createLinearGradient(0, 0, 0, 450);
 
-gradient.addColorStop(0, "rgba(72,72,72, 0.4)");
-gradient.addColorStop(0.5, "rgba(72,72,72, 0.2)");
-gradient.addColorStop(1, "rgba(72,72,72, 0.1)");
+gradient.addColorStop(0, colorData[stringValue].main+90);
+gradient.addColorStop(0.5, colorData[stringValue].main+40);
+gradient.addColorStop(1, colorData[stringValue].main+10);
 
 var noData = {
   labels: ["9:00", "10:00", "11:00", "12:00", "1:00", "2:00", "3:00"],
@@ -253,9 +254,9 @@ var noData = {
     {
       label: "no",
       backgroundColor: gradient,
-      pointBackgroundColor: "white",
+      pointBackgroundColor: colorData[stringValue].main,
       borderWidth: 1,
-      borderColor: "rgba(109,110,103)",
+      borderColor: colorData[stringValue].main,
       data: [13, 54, 46, 87, 48, 39, 11],
     },
   ],
@@ -272,7 +273,7 @@ var options = {
     xAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.05)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -280,7 +281,7 @@ var options = {
     yAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.08)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -295,12 +296,12 @@ var options = {
     display: false,
   },
   point: {
-    backgroundColor: "white",
+    backgroundColor: colorData[stringValue].main,
   },
   tooltips: {
     titleFontFamily: "Open Sans",
-    backgroundColor: "rgba(0,0,0,0.3)",
-    titleFontColor: "#424242",
+    backgroundColor: colorData[stringValue].main+30,
+    titleFontColor: colorData[stringValue].main+90,
     caretSize: 5,
     cornerRadius: 2,
     xPadding: 10,
@@ -319,9 +320,9 @@ var chartInstance = new Chart(noChart, {
 var no2Chart = document.getElementById("no2Chart").getContext("2d"),
   gradient = no2Chart.createLinearGradient(0, 0, 0, 450);
 
-gradient.addColorStop(0, "rgba(72,72,72, 0.4)");
-gradient.addColorStop(0.5, "rgba(72,72,72, 0.2)");
-gradient.addColorStop(1, "rgba(72,72,72, 0.1)");
+gradient.addColorStop(0, colorData[stringValue].main+90);
+gradient.addColorStop(0.5, colorData[stringValue].main+40);
+gradient.addColorStop(1, colorData[stringValue].main+10);
 
 var no2Data = {
   labels: ["9:00", "10:00", "11:00", "12:00", "1:00", "2:00", "3:00"],
@@ -329,9 +330,9 @@ var no2Data = {
     {
       label: "no2",
       backgroundColor: gradient,
-      pointBackgroundColor: "white",
+      pointBackgroundColor: colorData[stringValue].main,
       borderWidth: 1,
-      borderColor: "rgba(109,110,103)",
+      borderColor: colorData[stringValue].main,
       data: [93, 95, 86, 77, 28, 49, 51],
     },
   ],
@@ -348,7 +349,7 @@ var options = {
     xAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.05)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -356,7 +357,7 @@ var options = {
     yAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.08)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -371,12 +372,12 @@ var options = {
     display: false,
   },
   point: {
-    backgroundColor: "white",
+    backgroundColor: colorData[stringValue].main,
   },
   tooltips: {
     titleFontFamily: "Open Sans",
-    backgroundColor: "rgba(0,0,0,0.3)",
-    titleFontColor: "#424242",
+    backgroundColor: colorData[stringValue].main+30,
+    titleFontColor: colorData[stringValue].main+90,
     caretSize: 5,
     cornerRadius: 2,
     xPadding: 10,
@@ -395,9 +396,9 @@ var chartInstance = new Chart(no2Chart, {
 var o3Chart = document.getElementById("o3Chart").getContext("2d"),
   gradient = o3Chart.createLinearGradient(0, 0, 0, 450);
 
-gradient.addColorStop(0, "rgba(72,72,72, 0.4)");
-gradient.addColorStop(0.5, "rgba(72,72,72, 0.2)");
-gradient.addColorStop(1, "rgba(72,72,72, 0.1)");
+gradient.addColorStop(0, colorData[stringValue].main+90);
+gradient.addColorStop(0.5, colorData[stringValue].main+40);
+gradient.addColorStop(1, colorData[stringValue].main+10);
 
 var o3Data = {
   labels: ["9:00", "10:00", "11:00", "12:00", "1:00", "2:00", "3:00"],
@@ -405,9 +406,9 @@ var o3Data = {
     {
       label: "o3",
       backgroundColor: gradient,
-      pointBackgroundColor: "white",
+      pointBackgroundColor: colorData[stringValue].main,
       borderWidth: 1,
-      borderColor: "rgba(109,110,103)",
+      borderColor: colorData[stringValue].main,
       data: [23, 52, 46, 27, 48, 94, 21],
     },
   ],
@@ -424,7 +425,7 @@ var options = {
     xAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.05)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -432,7 +433,7 @@ var options = {
     yAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.08)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -447,12 +448,12 @@ var options = {
     display: false,
   },
   point: {
-    backgroundColor: "white",
+    backgroundColor: colorData[stringValue].main,
   },
   tooltips: {
     titleFontFamily: "Open Sans",
-    backgroundColor: "rgba(0,0,0,0.3)",
-    titleFontColor: "#424242",
+    backgroundColor: colorData[stringValue].main+30,
+    titleFontColor: colorData[stringValue].main+90,
     caretSize: 5,
     cornerRadius: 2,
     xPadding: 10,
@@ -471,9 +472,9 @@ var chartInstance = new Chart(o3Chart, {
 var pm2_5Chart = document.getElementById("pm2_5Chart").getContext("2d"),
   gradient = pm2_5Chart.createLinearGradient(0, 0, 0, 450);
 
-gradient.addColorStop(0, "rgba(72,72,72, 0.4)");
-gradient.addColorStop(0.5, "rgba(72,72,72, 0.2)");
-gradient.addColorStop(1, "rgba(72,72,72, 0.1)");
+gradient.addColorStop(0, colorData[stringValue].main+90);
+gradient.addColorStop(0.5, colorData[stringValue].main+40);
+gradient.addColorStop(1, colorData[stringValue].main+10);
 
 var pm2_5Data = {
   labels: ["9:00", "10:00", "11:00", "12:00", "1:00", "2:00", "3:00"],
@@ -481,9 +482,9 @@ var pm2_5Data = {
     {
       label: "pm2_5",
       backgroundColor: gradient,
-      pointBackgroundColor: "white",
+      pointBackgroundColor: colorData[stringValue].main,
       borderWidth: 1,
-      borderColor: "rgba(109,110,103)",
+      borderColor: colorData[stringValue].main,
       data: [33, 35, 46, 57, 78, 98, 91],
     },
   ],
@@ -500,7 +501,7 @@ var options = {
     xAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.05)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -508,7 +509,7 @@ var options = {
     yAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.08)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -523,12 +524,12 @@ var options = {
     display: false,
   },
   point: {
-    backgroundColor: "white",
+    backgroundColor: colorData[stringValue].main,
   },
   tooltips: {
     titleFontFamily: "Open Sans",
-    backgroundColor: "rgba(0,0,0,0.3)",
-    titleFontColor: "#424242",
+    backgroundColor: colorData[stringValue].main+30,
+    titleFontColor: colorData[stringValue].main+90,
     caretSize: 5,
     cornerRadius: 2,
     xPadding: 10,
@@ -547,9 +548,9 @@ var chartInstance = new Chart(pm2_5Chart, {
 var pm10Chart = document.getElementById("pm10Chart").getContext("2d"),
   gradient = pm10Chart.createLinearGradient(0, 0, 0, 450);
 
-gradient.addColorStop(0, "rgba(72,72,72, 0.4)");
-gradient.addColorStop(0.5, "rgba(72,72,72, 0.2)");
-gradient.addColorStop(1, "rgba(72,72,72, 0.1)");
+gradient.addColorStop(0, colorData[stringValue].main+90);
+gradient.addColorStop(0.5, colorData[stringValue].main+40);
+gradient.addColorStop(1, colorData[stringValue].main+10);
 
 var pm10Data = {
   labels: ["9:00", "10:00", "11:00", "12:00", "1:00", "2:00", "3:00"],
@@ -557,9 +558,9 @@ var pm10Data = {
     {
       label: "pm10",
       backgroundColor: gradient,
-      pointBackgroundColor: "white",
+      pointBackgroundColor: colorData[stringValue].main,
       borderWidth: 1,
-      borderColor: "rgba(109,110,103)",
+      borderColor: colorData[stringValue].main,
       data: [23, 85, 56, 77, 68, 79, 11],
     },
   ],
@@ -576,7 +577,7 @@ var options = {
     xAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.05)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -584,7 +585,7 @@ var options = {
     yAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.08)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -599,12 +600,12 @@ var options = {
     display: false,
   },
   point: {
-    backgroundColor: "white",
+    backgroundColor: colorData[stringValue].main,
   },
   tooltips: {
     titleFontFamily: "Open Sans",
-    backgroundColor: "rgba(0,0,0,0.3)",
-    titleFontColor: "#424242",
+    backgroundColor: colorData[stringValue].main+30,
+    titleFontColor: colorData[stringValue].main+90,
     caretSize: 5,
     cornerRadius: 2,
     xPadding: 10,
@@ -623,9 +624,9 @@ var chartInstance = new Chart(pm10Chart, {
 var so2Chart = document.getElementById("so2Chart").getContext("2d"),
   gradient = so2Chart.createLinearGradient(0, 0, 0, 450);
 
-gradient.addColorStop(0, "rgba(72,72,72, 0.2)");
-gradient.addColorStop(0.5, "rgba(72,72,72, 0.2)");
-gradient.addColorStop(1, "rgba(72,72,72, 0.1)");
+gradient.addColorStop(0, colorData[stringValue].main+90);
+gradient.addColorStop(0.5, colorData[stringValue].main+40);
+gradient.addColorStop(1, colorData[stringValue].main+10);
 
 var so2Data = {
   labels: ["9:00", "10:00", "11:00", "12:00", "1:00", "2:00", "3:00"],
@@ -633,9 +634,9 @@ var so2Data = {
     {
       label: "so2",
       backgroundColor: gradient,
-      pointBackgroundColor: "white",
+      pointBackgroundColor: colorData[stringValue].main,
       borderWidth: 1,
-      borderColor: "rgba(109,110,103)",
+      borderColor: colorData[stringValue].main,
       data: [83, 58, 76, 87, 78, 89, 71],
     },
   ],
@@ -652,7 +653,7 @@ var options = {
     xAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.05)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -660,7 +661,7 @@ var options = {
     yAxes: [
       {
         gridLines: {
-          color: "rgba(200, 200, 200, 0.08)",
+          color: colorData[stringValue].main+20,
           lineWidth: 1,
         },
       },
@@ -675,12 +676,12 @@ var options = {
     display: false,
   },
   point: {
-    backgroundColor: "white",
+    backgroundColor: colorData[stringValue].main,
   },
   tooltips: {
     titleFontFamily: "Open Sans",
-    backgroundColor: "rgba(0,0,0,0.3)",
-    titleFontColor: "#424242",
+    backgroundColor: colorData[stringValue].main+30,
+    titleFontColor: colorData[stringValue].main+90,
     caretSize: 5,
     cornerRadius: 2,
     xPadding: 10,
@@ -693,3 +694,4 @@ var chartInstance = new Chart(so2Chart, {
   data: so2Data,
   options: options,
 });
+}
